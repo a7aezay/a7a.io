@@ -1,0 +1,12 @@
+@font-face {
+  font-family: a7a;
+  src: url(../fonts/a7a-Regular.ttf);
+}
+
+div {
+  font-family: a7a;
+  word-spacing: 12px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: bold;
+}
