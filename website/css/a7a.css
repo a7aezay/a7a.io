@@ -2,11 +2,22 @@
   font-family: a7a;
   src: url(../fonts/a7a-Regular.ttf);
 }
+@font-face {
+  font-family: love;
+  src: url(../fonts/Love-Regular.ttf);
+}
 
-div {
-  font-family: a7a;
-  word-spacing: 12px;
-  text-align: justify;
-  text-justify: inter-word;
-  font-weight: bold;
+div
+{
+	font-family: a7a;
+	word-spacing: 12px;
+	text-align: justify;
+	text-justify: inter-word;
+	font-weight: bold;
+}
+
+.love { 
+	font-family: love;
+	text-align: left;
+	word-spacing: 7px;
 }
