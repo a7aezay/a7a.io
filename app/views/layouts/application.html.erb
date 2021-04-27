@@ -62,18 +62,29 @@
   <header>
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <%= link_to "a7a.io", "#", id: "logo", class: "nav-link disabled" %>
+        <%= link_to "a7a.io", "/", id: "logo", class: "nav-link" %>
       </li>
-      <li class="nav-item">
       <li class="nav-item"><%= link_to "/", "#", class: "nav-link disabled" %></li>
-      </li>
+      <% if user_signed_in? %>
       <li class="nav-item">
-      <li class="nav-item"><%= link_to "Login", "#", class: "nav-link" %></li>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
       </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+      </li>
+      <% end %>
+
     </ul>
   </header>
 
   <div class="container">
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </div>
 
