@@ -9,9 +9,17 @@
           <textarea maxlength="140" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <br />
+        <% if user_signed_in? %>
         <button type="submit" class="btn btn-outline-primary btn-lg px-4 me-sm-3">
           <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
         </button>
+        <% else %>
+        <button type="submit" class="btn btn-outline-primary disabled btn-lg px-4 me-sm-3">
+          <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
+        </button>
+        <% end %>
+
+
       </form>
     </div>
     <hr />
