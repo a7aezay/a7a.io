@@ -1,0 +1,7 @@
+<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active btn-dark">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= link_to thought.user.username %></h5>
+    <small>  <span class="timestamp"> <%= time_ago_in_words(thought.created_at) %> ago. </span></small>
+  </div>
+  <p class="mb-1"><%= thought.head %></p>
+</a>
