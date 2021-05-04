@@ -1,0 +1,54 @@
+      <form>
+        <div class="form-group">
+          <textarea maxlength="140" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <br />
+        <% if user_signed_in? %>
+        <button type="submit" class="btn btn-outline-primary btn-lg px-4 me-sm-3">
+          <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
+        </button>
+        <% else %>
+        <button type="submit" class="btn btn-outline-primary disabled btn-lg px-4 me-sm-3">
+          <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
+        </button>
+        <% end %>
+      </form>
+
+
+<%= form_with(model: [current_user, thought], url: thought_path, local: true) do |form| %>
+  <% if medical_recommendation.errors.any? %>
+    <div id="error_explanation" class="bg-dark">
+      <h2><%= pluralize(medical_recommendation.errors.count, "error") %> prohibited this medical_recommendation from being saved:</h2>
+
+      <ul>
+      <% medical_recommendation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :number, class: "form-label" %>
+    <%= form.text_field :number, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :issuer, class: "form-label" %>
+    <%= form.text_field :issuer, class: "form-control"  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :state, class: "form-label" %>
+    <%= form.select :state, options_for_select(us_states), class: "form-control"  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :expiration_date, class: "form-label" %>
+    <%= form.date_select :expiration_date, :order => [:day, :month, :year], class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :image_path, class: "form-label" %>
+    <%= form.text_field :image_path, class: "form-control"  %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
