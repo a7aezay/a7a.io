@@ -1,66 +1,17 @@
-<% provide(:title, current_user.username) %> <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= current_user.username %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if current_user.thoughts.any? %>
-    <h3>Thoughts (<%= current_user.thoughts.count %>)</h3>
-    <ol class="thoughts">
-      <%= render @thoughts %> </ol>
-    <%= will_paginate @thoughts %> <% end %>
-  </div>
-</div>
-
+<% provide(:title, current_user.username) %>
 <div class="container my-5">
   <div class="px-4 py-5 my-5 text-center rounded-3 border shadow-lg">
     <h1 class="display-5 fw-bold"><%= current_user.username %></h1>
     <div class="col-lg-6 mx-auto">
-      <form>
-        <div class="form-group">
-          <textarea maxlength="140" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <br />
-        <% if user_signed_in? %>
-        <button type="submit" class="btn btn-outline-primary btn-lg px-4 me-sm-3">
-          <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
-        </button>
-        <% else %>
-        <button type="submit" class="btn btn-outline-primary disabled btn-lg px-4 me-sm-3">
-          <%= image_tag "interrobang.svg", alt: "a7a", width: "16", height: "36" %>
-        </button>
-        <% end %>
-      </form>
+      <% if user_signed_in? %>
+      <%= render 'form', thought: @thought %>
+      <% end %>
     </div>
-    <hr />
+    <hr/>
     <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active btn-dark">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small>3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small>Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
+      <% @thoughts.each do |thought| %>
+      <%= render 'thought', thought: thought %>
+      <% end %>
     </div>
   </div>
 </div>
