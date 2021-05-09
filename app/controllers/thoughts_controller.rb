@@ -25,6 +25,7 @@ class ThoughtsController < ApplicationController
   def create
     @thought = Thought.new(thought_params)
     @thought.user = current_user
+    @thoughts = current_user.thoughts
 
     respond_to do |format|
       if @thought.save

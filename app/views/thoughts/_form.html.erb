@@ -20,7 +20,9 @@
   </button>
   <% else %>
   <div class="field">
-    <%= form.text_area :head, class: "form-control", disabled: true %>
+    <%= form.text_area :thought, :head, class: "form-control", disabled: true,
+    maxlength: "1000", placeholder: "Type in your message" %>
+    <span class="pull-right label label-default" id="count_message"></span>
   </div>
   <br />
   <button type="submit" class="btn btn-outline-primary disabled btn-lg px-4 me-sm-3">
