@@ -91,16 +91,22 @@
     <%= yield %>
   </div>
 
-    <footer>
+  <footer>
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <%= link_to "why a7a.io ?", "/about.html", id: "about", class: "nav-link" %>
+        <%= link_to "why a7a.io !?", "/about", id: "about", class: "nav-link" %>
       </li>
       <li class="nav-item"><%= link_to "/", "#", class: "nav-link disabled" %></li>
       <li class="nav-item">
-        <%= link_to "Contact us", "/help.html", id: "help", class: "nav-link" %>
+        <%= link_to "Contact us", "/help", id: "help", class: "nav-link" %>
       </li>
     </ul>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0);">
+      © 2021 Copyright:
+      <a class="text-dark" href="https://a7a.io/">a7a.io</a>
+    </div>
+    <!-- Copyright -->
   </footer>
 
 </body>
