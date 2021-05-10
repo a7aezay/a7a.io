@@ -1,6 +1,6 @@
 <% provide(:title, current_user.username) %>
-<div class="container my-5">
-  <div class="px-4 py-5 my-5 text-center rounded-3 border shadow-lg">
+<div class="container">
+  <div class="px-4 py-5 text-center rounded-3 border shadow-lg">
     <h1 class="display-5 fw-bold"><%= current_user.username %></h1>
     <div class="col-lg-6 mx-auto">
       <% if user_signed_in? %>

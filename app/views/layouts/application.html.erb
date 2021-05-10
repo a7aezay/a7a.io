@@ -91,6 +91,18 @@
     <%= yield %>
   </div>
 
+    <footer>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <%= link_to "why a7a.io ?", "/about.html", id: "about", class: "nav-link" %>
+      </li>
+      <li class="nav-item"><%= link_to "/", "#", class: "nav-link disabled" %></li>
+      <li class="nav-item">
+        <%= link_to "Contact us", "/help.html", id: "help", class: "nav-link" %>
+      </li>
+    </ul>
+  </footer>
+
 </body>
 
 </html>

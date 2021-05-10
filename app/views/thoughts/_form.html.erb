@@ -20,8 +20,7 @@
   </button>
   <% else %>
   <div class="field">
-    <%= form.text_area :head, class: "form-control", disabled: true %>
-    <span class="pull-right label label-default" id="count_message"></span>
+    <%= form.text_area :head, class: "form-control", disabled: true, placeholder: "Write your thoughts..." %>
   </div>
   <br />
   <button type="submit" class="btn btn-outline-primary disabled btn-lg px-4 me-sm-3">
