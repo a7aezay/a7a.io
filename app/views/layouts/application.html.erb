@@ -81,8 +81,8 @@
     </ul>
   </header>
 
-  <div class="container">
-    <% if notice %>
+
+  <div class="container text-center px-4 py-5 text-center rounded-3 border shadow-lg"> <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
@@ -94,21 +94,17 @@
   <footer>
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <%= link_to "why a7a.io !?", "/about", id: "about", class: "nav-link" %>
+        <%= link_to "Why a7a.io !?", "/static_pages/about", id: "about", class: "nav-link" %>
       </li>
       <li class="nav-item"><%= link_to "/", "#", class: "nav-link disabled" %></li>
       <li class="nav-item">
-        <%= link_to "Contact us", "/help", id: "help", class: "nav-link" %>
+        <%= link_to "Contact Us", "/static_pages/help", id: "help", class: "nav-link" %>
       </li>
     </ul>
-    <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0);">
       © 2021 Copyright:
       <a class="text-dark" href="https://a7a.io/">a7a.io</a>
     </div>
-    <!-- Copyright -->
   </footer>
-
 </body>
-
 </html>

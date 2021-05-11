@@ -1,16 +1,12 @@
 <% provide(:title, "live [beta]") %>
-<div class="container">
-  <div class="px-4 py-5 text-center rounded-3 border shadow-lg">
-    <h1 class="display-5 fw-bold" style="display:inline;">a7a.io</h1>
-    <small class="text-muted" style="display:inline;">[beta]</small>
-    <div class="col-lg-6 mx-auto">
-      <%= render 'thoughts/form', thought: @thought %>
-    </div>
-    <br/>
-    <div class="list-group">
-      <% @thoughts.each do |thought| %>
-      <%= render 'thoughts/thought', thought: thought %>
-      <% end %>
-    </div>
-  </div>
+<h1 class="display-5 fw-bold" style="display:inline;">a7a.io</h1>
+<small class="text-muted" style="display:inline;">[beta]</small>
+<div class="mx-auto col-lg-6">
+  <%= render 'thoughts/form', thought: @thought %>
+</div>
+<br/>
+<div class="list-group">
+  <% @thoughts.each do |thought| %>
+    <%= render 'thoughts/thought', thought: thought %>
+  <% end %>
 </div>
