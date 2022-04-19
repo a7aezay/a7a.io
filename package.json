@@ -2,8 +2,10 @@
   "name": "a7a.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node ./node_modules/pm2/bin/pm2 start ./server.js --name a7a-io --log ./a7a-io.log",
+    "stop": "node ./node_modules/pm2/bin/pm2 stop a7a-io",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/a7aezay/a7a.io/issues"
   },
-  "homepage": "https://github.com/a7aezay/a7a.io#readme"
+  "homepage": "https://github.com/a7aezay/a7a.io#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pm2": "^4.5.6",
+    "userbase-js-node": "^0.0.0"
+  }
 }
